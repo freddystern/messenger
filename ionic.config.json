@@ -1,0 +1,7 @@
+{
+  "name": "messi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

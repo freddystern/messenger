@@ -28,7 +28,7 @@ export class GalleryComponent implements AfterViewInit {
     this.gallery.style.setProperty('grid-gap', this.gap + 'px');
     setTimeout(() => {
       this.checkExpand();
-    }, 0);
+    }, 100);
   }
 
   @Input()

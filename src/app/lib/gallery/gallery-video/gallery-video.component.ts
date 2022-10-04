@@ -30,7 +30,10 @@ export class GalleryVideoComponent implements OnInit, AfterViewInit {
     this.video.src = this.src;
     this.video.load();
     this.video.addEventListener('pause', ev => {
-
+      this.pause = true;
+    })
+    this.video.addEventListener('play', ev => {
+      this.pause = false;
     })
   }
 

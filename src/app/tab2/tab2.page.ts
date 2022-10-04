@@ -1,5 +1,9 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
+import { Observable } from 'rxjs';
+import { FileSystemService } from '../lib/file/file-system.service';
 import { GalleryComponent } from '../lib/gallery/gallery.component';
+import { LocalVideo } from '../lib/media/video/video-capture.service';
 
 
 @Component({
@@ -9,13 +13,20 @@ import { GalleryComponent } from '../lib/gallery/gallery.component';
 })
 export class Tab2Page implements AfterViewInit{
 
-  @ViewChild(GalleryComponent) gallery: GalleryComponent;
+  @ViewChild('gallery') gallery: GalleryComponent;
 
-  constructor() { 
+  localVideos: Observable<LocalVideo[]>;
+
+  constructor(private fileSystem: FileSystemService) { 
+    this.localVideos = this.fileSystem.localVideos$;
   }
 
   ngAfterViewInit(): void {
 
+  }
+
+  getNativePath(path: string) {
+    return Capacitor.convertFileSrc(path);
   }
 
   zoom(): void {

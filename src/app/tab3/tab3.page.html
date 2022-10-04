@@ -12,7 +12,16 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="img-container">
-    <img src="assets/pictures/1.jpg">
+  <div class="container">
+    <div class="thumbnail">
+      <ion-icon *ngIf="!localVideo" name="image-outline"></ion-icon>
+      <video #video (click)="play()" ></video>
+    </div>
+    <ion-button (click)="saveVideo()">save</ion-button>
   </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="captureVideo()">
+      <ion-icon name="videocam-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

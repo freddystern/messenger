@@ -1,0 +1,28 @@
+.gallery {
+    --sz: 40px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--sz), 1fr));
+    grid-auto-rows: var(--sz);
+    grid-gap: 4px;
+    overflow: hidden;
+    transition: 0.5s all;
+
+    .content-fit {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .img {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        max-height: 150px;
+    }
+}
+
+.large {
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+}

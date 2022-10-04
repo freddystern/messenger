@@ -17,7 +17,7 @@
       <ion-icon *ngIf="!localVideo" name="image-outline"></ion-icon>
       <video #video (click)="play()" ></video>
     </div>
-    <ion-button (click)="saveVideo()">save</ion-button>
+    <ion-button (click)="saveVideo()" [disabled]="localVideo == undefined">save</ion-button>
   </div>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="captureVideo()">

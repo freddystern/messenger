@@ -33,6 +33,7 @@ export class FileService {
     return await file;
   }
 
+
   public convertToNativeUrl(path: string){
     if(this.platform.is('ios')){
       if(path.substring(0, 7) != 'file://')

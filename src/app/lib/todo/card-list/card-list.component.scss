@@ -20,14 +20,14 @@
 }
 .bottom-bar{
     position: absolute;
-    bottom: 55px;
+    bottom: 50px;
     right: 0;
     left: 0;
     display: flex;
     padding: 15px;
     justify-content: flex-end;
     gap: 10px;
-    transition: background-color 200ms;
+
     .addCardBox{
         position: relative;
         display: flex;
@@ -61,7 +61,7 @@
             font-size: 20px;
             padding-left: 10px;
             padding-right: 40px;
-            background-color: var(--ion-color-light);
+            background-color: var(--ion-color-medium-contrast);
         }
     }
     .addCardBoxOpen{
@@ -75,7 +75,7 @@
         min-width: 50px;
         min-height: 50px;
         border-radius: 50%;
-        background-color: var(--ion-color-light);
+        background-color: var(--ion-color-medium-contrast);
         ion-icon{
             font-size: 40px;
             color: var(--ion-color-dark);
@@ -93,5 +93,4 @@
     }
 }
 .bottom-bar-open{
-    background-color: var(--ion-color-medium-contrast);
 }

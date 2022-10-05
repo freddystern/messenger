@@ -3,23 +3,23 @@
     <div class="title">
       ToDo's:
     </div>
-    <card></card>
+    <card *ngFor="let todo of todos" [todo]="todo" (checkTodo)="checkTodo($event)" ></card>
   </div>
-  <div class="todos-done">
+  <div class="todos" *ngIf="todosDone.length > 0">
     <div class="title">
       Done:
     </div>
-    <card></card>
+    <card *ngFor="let todo of todosDone" [todo]="todo" (checkTodo)="checkTodo($event)" ></card>
   </div>
 </div>
-<div class="bottom-bar">
-  <div class="addCardBox" [ngClass]="{'addCardBoxOpen': isAdding}">
-    <div class="apply-btn">
+<div class="bottom-bar" [ngClass]="{'bottom-bar-open': isOpen}">
+  <div class="addCardBox" [ngClass]="{'addCardBoxOpen': isOpen}">
+    <div class="apply-btn" (click)="add()">
       <ion-icon name="checkmark-outline"></ion-icon>
     </div>
-    <input type="text">
+    <input type="text" (keyup.enter)="add()" [(ngModel)]="newToDo" placeholder="do do n to do..">
   </div>
-  <div class="add-btn" [ngClass]="{'clear': isAdding}" (click)="add()">
+  <div class="add-btn" [ngClass]="{'clear': isOpen}" (click)="open()">
     <ion-icon name="add-outline"></ion-icon>
   </div>
 </div>

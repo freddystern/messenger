@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToDo } from '../card-list/card-list.component';
 
 @Component({
   selector: 'card',
@@ -7,8 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() todo: ToDo;
+  @Output() checkTodo= new EventEmitter<ToDo>();
+
+
   constructor() { }
 
   ngOnInit() {}
+
+  checkToggle(){
+    this.todo.checked = !this.todo.checked;
+    this.checkTodo.emit(this.todo);
+  }
+
+  remove(){
+    this.todo.deleted = true;
+    this.checkTodo.emit(this.todo);
+  }
+
 
 }

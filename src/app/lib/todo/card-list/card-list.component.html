@@ -11,15 +11,15 @@
     </div>
     <card></card>
   </div>
-  <div class="bottom-bar">
-    <div class="addCardBox" [ngClass]="{'addCardBoxOpen': isAdding}">
-      <div class="apply-btn">
-        <ion-icon name="checkmark-outline"></ion-icon>
-      </div>
-      <input type="text">
+</div>
+<div class="bottom-bar">
+  <div class="addCardBox" [ngClass]="{'addCardBoxOpen': isAdding}">
+    <div class="apply-btn">
+      <ion-icon name="checkmark-outline"></ion-icon>
     </div>
-    <div class="add-btn" [ngClass]="{'clear': isAdding}" (click)="add()">
-      <ion-icon name="add-outline"></ion-icon>
-    </div>
+    <input type="text">
+  </div>
+  <div class="add-btn" [ngClass]="{'clear': isAdding}" (click)="add()">
+    <ion-icon name="add-outline"></ion-icon>
   </div>
 </div>

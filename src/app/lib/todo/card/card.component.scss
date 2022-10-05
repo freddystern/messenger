@@ -1,0 +1,32 @@
+.card-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+    border: 2px solid var(--ion-color-dark);
+    border-radius: 10px;
+    padding: 15px;
+    .title{
+        width: 100%;
+        font-size: 20px;
+    }
+    .done{
+        text-decoration: line-through;
+    }
+    .check-btn{
+        display: grid;
+        place-items: center;
+        min-width: 30px;
+        min-height: 30px;
+        border: 2px solid var(--ion-color-dark);
+        border-radius: 5px;
+        ion-icon{
+            font-size: 25px;
+        }
+    }
+    .delete-btn{
+        ion-icon{
+            font-size: 30px;
+        }
+    }
+}

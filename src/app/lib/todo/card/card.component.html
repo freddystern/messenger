@@ -1,0 +1,10 @@
+<div class="card-container">
+  <div class="check-btn" (click)="checked = !checked">
+    <ion-icon *ngIf="checked" name="checkmark-outline"></ion-icon>
+  </div>
+  <div class="title" [ngClass]="{'done': checked}">title</div>
+  <div class="delete-btn">
+    <ion-icon name="trash-outline"></ion-icon>
+  </div>
+
+</div>

@@ -1,0 +1,79 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+    height: 100%;
+    .title{
+        font-size: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .bottom-bar{
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        .addCardBox{
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 0%;
+            max-width: 400px;
+            border: 2px solid var(--ion-color-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 1s;
+            .apply-btn{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                display: grid;
+                place-items: center;
+                width: 40px;
+                height: 100%;
+                ion-icon{
+                    font-size: 30px;
+                    color: var(--ion-color-success);
+                }
+            }
+            input{
+                border: none;
+                height: 100%;
+                width: 100%;
+                font-size: 20px;
+                padding-left: 10px;
+                padding-right: 40px;
+            }
+        }
+        .addCardBoxOpen{
+            width: 100%;
+            opacity: 1;
+        }
+        .add-btn{
+            display:grid;
+            place-items: center;
+            border: 2px solid var(--ion-color-dark);
+            min-width: 50px;
+            min-height: 50px;
+            border-radius: 50%;
+            ion-icon{
+                font-size: 40px;
+                color: var(--ion-color-dark);
+            }
+            transition: transform 0.5s;
+        }
+        .clear{
+            transform: rotate(45deg);
+            ion-icon{
+                color: var(--ion-color-danger);
+            }
+        }
+    }
+}
